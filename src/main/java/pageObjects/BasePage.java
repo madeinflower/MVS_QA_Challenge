@@ -16,6 +16,7 @@ public class BasePage {
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
+
     public static WebDriverWait wait;
 
     public void waitForVisibility(WebElement element) {

@@ -1,22 +1,21 @@
 package base;
 
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Base {
 
-    // Метод для получения WebDriver
     protected WebDriver getDriver() {
-        WebDriver driver = new ChromeDriver(); // Инициализация ChromeDriver
-        driver.manage().window().maximize(); // Открытие браузера в максимальном режиме
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         return driver;
     }
 
-    // Метод для закрытия WebDriver
     protected void quitDriver(WebDriver driver) {
         if (driver != null) {
-            driver.quit(); // Закрытие браузера
+            driver.quit();
         }
     }
 }
