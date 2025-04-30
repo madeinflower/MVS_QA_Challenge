@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class GoogleSearchTest extends Base {
 
     private WebDriver driver;
@@ -24,6 +26,7 @@ public class GoogleSearchTest extends Base {
         googleSearchPage.enterSearchQuery("Active sync");
         googleSearchPage.submitSearch();
         googleSearchPage.getFirstResult().click();
+        assertTrue(googleSearchPage.getFirstResult().isDisplayed());
     }
 
     @After
